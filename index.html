@@ -1,0 +1,557 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1">
+  <title>BRAND_REDACTED x Insider One | 浼氬墠涓氬姟 Brief</title>
+  <style>
+    :root {
+      --ink: #1f2328;
+      --muted: #667085;
+      --line: #d9dee7;
+      --paper: #f6f7f9;
+      --white: #ffffff;
+      --green: #0f766e;
+      --blue: #2563eb;
+      --red: #b42318;
+      --amber: #b54708;
+      --violet: #6d28d9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.62;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    header {
+      background: #111827;
+      color: var(--white);
+      padding: 34px;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 auto;
+      width: 42%;
+      height: 100%;
+      background:
+        linear-gradient(135deg, transparent 0 30%, rgba(37, 99, 235, .22) 30% 31%, transparent 31% 48%, rgba(15, 118, 110, .22) 48% 49%, transparent 49%),
+        linear-gradient(45deg, transparent 0 54%, rgba(255, 255, 255, .08) 54% 55%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 13px;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 820px;
+      font-size: clamp(28px, 4.5vw, 48px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 18px 0 0;
+      max-width: 780px;
+      color: #e5e7eb;
+      font-size: 17px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      font-size: 13px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border: 1px solid rgba(255, 255, 255, .25);
+      border-radius: 999px;
+      color: #f8fafc;
+      background: rgba(255, 255, 255, .08);
+    }
+
+    main {
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    section {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 26px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 23px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul, ol {
+      margin: 8px 0 0 22px;
+      padding: 0;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: #fbfcfe;
+    }
+
+    .box h3 {
+      margin-top: 0;
+    }
+
+    .note {
+      border-left: 4px solid var(--green);
+      background: #f0fdfa;
+      padding: 14px 16px;
+      border-radius: 6px;
+    }
+
+    .warning {
+      border-left-color: var(--amber);
+      background: #fffbeb;
+    }
+
+    .danger {
+      border-left-color: var(--red);
+      background: #fff1f2;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(128px, 1fr));
+      gap: 10px;
+      margin: 16px 0 4px;
+    }
+
+    .step {
+      min-height: 92px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f8fafc;
+      position: relative;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .step span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3730a3;
+      font-size: 12px;
+      margin: 0 5px 5px 0;
+      white-space: nowrap;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      background: #f3f4f6;
+      font-weight: 700;
+    }
+
+    .fit-high {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .fit-mid {
+      color: var(--amber);
+      font-weight: 700;
+    }
+
+    .fit-later {
+      color: var(--violet);
+      font-weight: 700;
+    }
+
+    .checklist {
+      columns: 2;
+      column-gap: 32px;
+    }
+
+    .checklist li {
+      break-inside: avoid;
+    }
+
+    footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .two-col,
+      .three-col,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      header,
+      section {
+        padding: 22px;
+      }
+
+      .checklist {
+        columns: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <p class="eyebrow">Pre-Meeting Brief | For Insider One preparation</p>
+      <h1>BRAND_REDACTED x Insider One 浼氬墠涓氬姟 Brief</h1>
+      <p class="subtitle">
+        杩欎唤鏂囨。鐢ㄤ簬浼氬墠瀵归綈锛屽府鍔?Insider One 鍥㈤槦鏇存湁閽堝鎬у湴鍑嗗 presentation銆佹渚嬪拰 demo锛?        鎴戜滑甯屾湜璁ㄨ涓皬鍨?Shopify 鏈嶈鍝佺墝濡備綍浠?PDP 琛屼负銆丒DM/EVM銆佸鎴锋暟鎹拰澶嶈喘閾捐矾涓紝閫愭寤虹珛鏇存垚鐔熺殑瀹㈡埛杩愯惀鑳藉姏锛屽苟璇勪及鍙屾柟鏄惁瀛樺湪娓呮櫚鐨勫悎浣滃垏鍏ョ偣銆?      </p>
+      <div class="meta">
+        <span class="pill">Prepared: 2026-07-02</span>
+        <span class="pill">Business: Shopify DTC Apparel</span>
+        <span class="pill">Focus: PDP behavior -> CDP/EBM -> lifecycle service fit</span>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>1. 鎴戜滑甯屾湜杩欐浼氳瑙ｅ喅浠€涔?/h2>
+        <div class="note">
+          <p><strong>鏍稿績闂锛?/strong>鎴戜滑甯屾湜瀵归綈 Insider One 鍦ㄩ浂鍞€佺數鍟嗗拰瀹㈡埛鐢熷懡鍛ㄦ湡杩愯惀涓婄殑缁忛獙锛屽苟璁ㄨ鍝簺鑳藉姏閫傚悎涓€涓腑灏忓瀷 Shopify 鏈嶈鍝佺墝鍒嗛樁娈佃惤鍦般€傛垜浠鍚堜綔鍙兘鎬ф寔寮€鏀炬€佸害锛屼絾甯屾湜鍏堜粠璐磋繎褰撳墠闃舵鐨勫満鏅紑濮嬭璁恒€?/p>
+        </div>
+        <p>
+          鎴戜滑褰撳墠鏇村叧蹇冪殑鏄細濡傛灉 PDP 鍩虹璐拱璺緞鍏堜紭鍖栧ソ锛岀敤鎴峰湪绔欏唴鐨勬祻瑙堛€佸昂鐮侀€夋嫨銆佸姞璐€佸純璐€侀璐€佸璐拰閫€鎹㈣揣淇″彿锛岃兘鍚﹁娌夋穩涓哄彲杩愯惀鐨勫鎴风敾鍍忋€佷汉缇ゅ垎灞傚拰鑷姩鍖栨梾绋嬨€?        </p>
+        <div class="flow" aria-label="business question flow">
+          <div class="step"><strong>PDP 琛屼负</strong><span>娴忚銆佸昂鐮侀€夋嫨銆佸姞璐€佸純璐€佸洖璁?/span></div>
+          <div class="step"><strong>瀹㈡埛鏁版嵁</strong><span>鍝佺被鍋忓ソ銆佸昂鐮?鐗堝瀷鍏虫敞銆佽喘涔板拰閫€鎹㈣揣淇″彿</span></div>
+          <div class="step"><strong>浜虹兢鍒嗗眰</strong><span>鏂拌瀹€侀珮鎰忓悜銆佸純璐€侀璐€佹矇榛樸€佹綔鍦ㄥ璐?/span></div>
+          <div class="step"><strong>瑙﹁揪鏃呯▼</strong><span>鐜版湁 EDM 涓哄熀纭€锛屼簡瑙ｆ湭鏉ュ彲閫夋笭閬撱€佺珯鍐呬釜鎬у寲鍜屽箍鍛婂彈浼?/span></div>
+          <div class="step"><strong>鏈嶅姟閫傞厤</strong><span>鑳藉姏杈圭晫銆佸疄鏂芥柟寮忋€佹渚嬪弬鑰冦€佸悎浣滃彲鑳芥€?/span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>2. 褰撳墠涓氬姟涓庡洟闃熺幇瀹?/h2>
+        <div class="three-col">
+          <div class="box">
+            <h3>涓氬姟褰㈡€?/h3>
+            <ul>
+              <li>Shopify 涓婄殑 DTC apparel brand銆?/li>
+              <li>浠?PDP銆丆ollection銆佹悳绱?璐墿骞垮憡銆佸唴瀹瑰拰澶嶈喘閾捐矾鍏卞悓椹卞姩澧為暱銆?/li>
+              <li>鏈嶈涓氬姟鏍稿績涓嶅彧鏄Е杈鹃娆★紝杩樺寘鎷昂鐮併€佺増鍨嬨€佷俊浠汇€侀€€鎹㈣揣鍜岄璐悗鐨勭浜屽崟銆?/li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>鐜版湁鐘舵€?/h3>
+            <ul>
+              <li>鐩墠宸叉湁 EDM 瑙﹁揪銆?/li>
+              <li>涔熸湁浜哄湪鎺ㄨ繘 EBM/EVM 鐩稿叧宸ヤ綔锛屽嵆鍩轰簬鐢ㄦ埛琛屼负浜嬩欢鍋氭洿缁嗙殑瑙﹁揪鍜屽垎灞傘€?/li>
+              <li>鐩墠灏氭湭浣跨敤 WhatsApp/SMS/Web Push锛岃繖浜涙洿閫傚悎浣滀负鏈潵閫夐」鍜屽彲琛屾€ц瘎浼版柟鍚戙€?/li>
+              <li>PDP 杞寲浼樺寲鏂规宸茬粡鏈夎瘖鏂紝浣嗗皻鏈紑濮嬫寮忓疄鏂姐€?/li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>浜哄憳涓庡疄鏂界害鏉?/h3>
+            <ul>
+              <li>鎴戜滑鏄腑灏忓瀷鍥㈤槦锛岀煭鏈熸洿閫傚悎鍒嗛樁娈垫帹杩涙垚鐔熸柟妗堬紝鑰屼笉鏄竴娆℃€у仛瀹屾暣浼佷笟绾?MarTech 閲嶆瀯銆?/li>
+              <li>鍐呴儴鏇撮€傚悎浣庡伐绋嬮噺銆佹竻鏅拌竟鐣屻€佸彲鍒嗛樁娈垫帹杩涚殑鏈嶅姟鏂规銆?/li>
+              <li>鎵€鏈?Shopify銆丳DP銆佸箍鍛娿€佸鎴锋暟鎹浉鍏冲姩浣滈兘闇€瑕佷繚鐣欎汉宸ュ鎵瑰拰鍙樻洿鎺у埗銆?/li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>3. 鎴戜滑甯屾湜鍥寸粫鐨勪笟鍔″満鏅?/h2>
+        <p>
+          鎴戜滑甯屾湜杩欐浼氳浼樺厛鍥寸粫 Shopify DTC apparel 鐨?PDP 鍜屽鎴风敓鍛藉懆鏈熷睍寮€銆傛瘮璧峰厛杩涘叆鍐呴儴缁嗚妭锛屾垜浠洿甯屾湜 Insider One 缁撳悎浣犱滑鐨勬湇鍔¤兘鍔涖€佹渚嬪拰鏂规硶锛岃鏄庡浣曞府鍔╁搧鐗屾妸绔欏唴琛屼负銆佸鎴峰亸濂藉拰鍚庣画瑙﹁揪杩炴帴璧锋潵銆?        </p>
+        <div class="two-col">
+          <div class="box">
+            <h3>鎴戜滑鍏虫敞鐨勫満鏅?/h3>
+            <ul>
+              <li>PDP 娴忚銆佸昂鐮?鍝佺被鍏磋叮銆佸姞璐€佸純璐拰鍥炶绛夎涓哄浣曡璇嗗埆銆?/li>
+              <li>鍖垮悕璁垮濡備綍閫愭娌夋穩涓哄彲杩愯惀鐨勫鎴?profile銆?/li>
+              <li>鐜版湁 EDM 濡備綍杩涗竴姝ュ崌绾т负鏇寸簿缁嗙殑瀹㈡埛鍒嗗眰鍜岀敓鍛藉懆鏈熻Е杈俱€?/li>
+              <li>棣栬喘鍚庡浣曢€氳繃鍐呭銆佹帹鑽愬拰鍐嶈Е杈炬彁鍗囩浜屽崟鍜屽璐€?/li>
+              <li>骞垮憡鍙椾紬銆佺珯鍐呬釜鎬у寲鍜?owned channels 涔嬮棿濡備綍褰㈡垚鍙嶉闂幆銆?/li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>甯屾湜浣犱滑閲嶇偣灞曠ず</h3>
+            <ul>
+              <li>绫讳技 Shopify / DTC / apparel / retail 鍦烘櫙鐨勬渚嬫垨 demo銆?/li>
+              <li>浠庣珯鍐呰涓哄埌瀹㈡埛鐢诲儚銆乻egment銆乯ourney 鐨勬暟鎹祦銆?/li>
+              <li>Insider One 涓庣幇鏈?EDM/EVM 宸ヤ綔鐨勯泦鎴愭垨鍗忓悓鏂瑰紡銆?/li>
+              <li>涓嶅悓闃舵鍝佺墝濡備綍閫夋嫨鍚堥€傜殑妯″潡鍜屽疄鏂借妭濂忋€?/li>
+              <li>涓嶅悓绫诲瀷鏈嶅姟閫氬父濡備綍钀藉湴锛屼互鍙婂搧鐗屾柟闇€瑕侀厤鍚堝摢浜涜祫婧愩€?/li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>4. 鎴戜滑鐞嗚В鐨?Insider One 鑳藉姏涓庡尮閰嶅害</h2>
+        <p>
+          鏍规嵁 Insider One 鍏紑璧勬枡锛屽畠瑕嗙洊 CDP銆丳ersonalization銆丣ourney Orchestration銆丷eporting銆丅ehavioral Analytics锛屼互鍙?Web銆丒mail銆乄hatsApp銆乄eb Push銆丼MS/RCS銆両nStory 绛夋笭閬擄紱鍏?Retail & Ecommerce 鏂瑰悜寮鸿皟浠?first click 鍒?repeat purchase锛汭ntegration Hub 涓垪鍑?Shopify銆丼hopify Plus銆並laviyo 绛夌浉鍏宠繛鎺ラ」銆傛垜浠綋鍓嶅苟鏈娇鐢?WhatsApp/SMS/Web Push锛屼絾甯屾湜鍊熻繖娆℃満浼氱悊瑙ｈ繖浜涙笭閬撳湪鎴愮啛瀹㈡埛杩愯惀浣撶郴涓殑浣嶇疆銆?        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Insider One 鑳藉姏</th>
+              <th>瀵规垜浠殑娼滃湪浠峰€?/th>
+              <th>鍖归厤搴?/th>
+              <th>闇€瑕佷細璁‘璁?/th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CDP / Unified Customer Profiles</td>
+              <td>鎶?Shopify銆丳DP 琛屼负銆丒DM 浜掑姩銆佽鍗曘€侀€€鎹㈣揣鍜屽亸濂藉瓧娈靛悎骞朵负瀹㈡埛鐢诲儚銆?/td>
+              <td class="fit-high">楂橈紝浣嗚灏忚寖鍥村紑濮?/td>
+              <td>鏄惁鏀寔鏈嶈瀛楁锛氬昂鐮佸亸濂姐€佺増鍨嬮【铏戙€佽喘涔板昂鐮併€侀€€鎹㈣揣鍘熷洜锛涙槸鍚﹂渶瑕侀噸鏁版嵁杩佺Щ銆?/td>
+            </tr>
+            <tr>
+              <td>Journey Orchestration</td>
+              <td>浠庡崟涓€ EDM 璧板悜鍩轰簬琛屼负鐨?welcome銆佸純璐€侀璐悗澶嶈喘銆佹矇榛樼敤鎴锋縺娲汇€?/td>
+              <td class="fit-high">楂?/td>
+              <td>濡備綍涓庣幇鏈?EDM/EVM 鍗忎綔锛岄伩鍏嶉噸澶嶈Е杈撅紱瀹炴柦涓搧鐗屾柟闇€瑕佹姇鍏ュ摢浜涜祫婧愩€?/td>
+            </tr>
+            <tr>
+              <td>On-site Personalization / Web</td>
+              <td>鍩轰簬鏉ユ簮銆佸搧绫诲叴瓒ｃ€佸洖璁胯涓哄拰瀹㈡埛闃舵锛屽湪绔欏唴鏄剧ず涓嶅悓鎻愮ず鎴栨帹鑽愩€?/td>
+              <td class="fit-mid">涓珮</td>
+              <td>濡備綍涓庣幇鏈?Shopify 绔欑偣浣撻獙鍏煎锛涘疄鏂芥椂瀵归〉闈綋楠屽拰鎶€鏈伐浣滅殑瑕佹眰銆?/td>
+            </tr>
+            <tr>
+              <td>Email / Future Messaging Channels</td>
+              <td>褰撳墠浠?EDM/email 涓哄熀纭€锛涘笇鏈涗簡瑙?WhatsApp銆丼MS銆乄eb Push 绛夋笭閬撳湪寮冭喘銆佸璐拰楂樻剰鍚戠敤鎴峰洖娴佷腑鐨勬垚鐔熺敤娉曘€?/td>
+              <td class="fit-mid">涓紝鍋忔湭鏉ュ彲琛屾€ц瘎浼?/td>
+              <td>杩欎簺娓犻亾鍒嗗埆閫傚悎浠€涔堝満鏅€侀渶瑕佷粈涔堟巿鏉冦€佹垚鏈粨鏋勫浣曘€佸浣曢伩鍏嶈繃搴︽墦鎵扮敤鎴枫€?/td>
+            </tr>
+            <tr>
+              <td>Ad audience sync / Retargeting</td>
+              <td>鎶婇珮鎰忓悜銆佸純璐€佹矇榛橀璐€乂IP 椋庨櫓鐢ㄦ埛鍚屾鍒板箍鍛婂彈浼楁垨鎺掗櫎鍚嶅崟銆?/td>
+              <td class="fit-high">楂?/td>
+              <td>Google銆丮eta銆乀ikTok 鐨勮繛鎺ユ柟寮忋€佸埛鏂伴鐜囥€侀殣绉佸鐞嗗拰甯歌浣跨敤鍦烘櫙銆?/td>
+            </tr>
+            <tr>
+              <td>AI Agent / Conversational Commerce</td>
+              <td>闀挎湡鍙兘鐢ㄤ簬瀵艰喘銆佸鏈嶃€佷骇鍝佹帹鑽愬拰鍞悗杈呭姪銆?/td>
+              <td class="fit-later">鍚庣疆楠岃瘉</td>
+              <td>娆㈣繋浠嬬粛鎴愮啛妗堜緥鍜岄暱鏈熷彲鑳芥€э紱绗竴闃舵鎴戜滑浼氬厛鐞嗚В鍟嗗搧鏁版嵁銆佸昂鐮侀€昏緫鍜屼汉宸ュ鏍告満鍒躲€?/td>
+            </tr>
+            <tr>
+              <td>Reporting & AI Insights</td>
+              <td>甯姪澶嶇洏涓嶅悓 journey銆佷汉缇ゅ拰娓犻亾鐨勮〃鐜般€?/td>
+              <td class="fit-mid">涓?/td>
+              <td>鑳藉惁灞曠ず涓嶅悓 journey銆佷汉缇ゅ拰娓犻亾琛ㄧ幇锛屽苟璇存槑甯歌璇勪及鏂瑰紡銆?/td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>5. 甯屾湜 Insider One 浼氬墠鍑嗗鐨勫唴瀹?/h2>
+        <ol>
+          <li>涓€涓?Shopify DTC apparel 鎴栫浉杩戦浂鍞満鏅?demo锛屼笉闇€瑕佹硾娉涘钩鍙版瑙堛€?/li>
+          <li>PDP 浜嬩欢鍒?customer profile銆乻egment銆乯ourney 鐨勬暟鎹祦鍥俱€?/li>
+          <li>鍜岀幇鏈?EDM/EVM 宸ヤ綔鐨勮竟鐣岋細鏇夸唬銆侀泦鎴愶紝杩樻槸涓婂眰缂栨帓銆?/li>
+          <li>閫傚悎涓皬鍨嬪洟闃熺殑鏈嶅姟缁勫悎銆佸疄鏂芥柟寮忋€佹椂闂淬€佷汉鍔涖€佽垂鐢ㄥ拰渚濊禆椤广€?/li>
+          <li>涓嶅悓鍚堜綔娣卞害涓嬶紝鍝佺墝鏂归€氬父闇€瑕佸噯澶囧摢浜涙暟鎹€佺礌鏉愬拰鍐呴儴璧勬簮銆?/li>
+          <li>涓?Shopify銆並laviyo銆丟A4銆丟oogle Ads銆丮eta銆乀ikTok 鐨勮繛鎺ユ柟寮忓拰闄愬埗銆?/li>
+          <li>濡傛湁鎴愮啛妗堜緥锛屼篃娆㈣繋浠嬬粛 WhatsApp/SMS/Web Push 鍦ㄦ湇瑁呯數鍟嗕腑鐨勫悎瑙勩€佸悓鎰忔巿鏉冦€侀€€璁€佹ā鏉垮鎵瑰拰棰戞帶寤鸿銆?/li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>6. 鎴戜滑寤鸿鐨勪細璁绋?/h2>
+        <table>
+          <thead>
+            <tr>
+              <th>鏃堕棿</th>
+              <th>涓婚</th>
+              <th>甯屾湜浜у嚭</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5 min</td>
+              <td>纭涓氬姟鑳屾櫙涓庨檺鍒?/td>
+              <td>鍙屾柟瀵逛腑灏忓瀷鍥㈤槦銆丼hopify銆丳DP銆丒DM/EVM 杈圭晫鏈夊悓涓€鐞嗚В銆?/td>
+            </tr>
+            <tr>
+              <td>15 min</td>
+              <td>Insider One 閽堝鎬?demo</td>
+              <td>甯屾湜鍏堢湅鍜?Shopify apparel銆丳DP 琛屼负銆佸鎴峰垎灞傘€佸璐浉鍏崇殑妗堜緥鎴?demo銆?/td>
+            </tr>
+            <tr>
+              <td>15 min</td>
+              <td>鏈嶅姟鑳藉姏涓庨€傞厤鏂瑰紡</td>
+              <td>浜嗚В鍝簺妯″潡銆佹湇鍔℃柟寮忓拰钀藉湴璺緞鏇撮€傚悎褰撳墠闃舵銆?/td>
+            </tr>
+            <tr>
+              <td>5 min</td>
+              <td>涓嬩竴姝?/td>
+              <td>鍐冲畾鏄惁闇€瑕佽繘涓€姝ユ妧鏈緞娓呫€佹渚嬪榻愭垨鏂规娌熼€氥€?/td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>7. 鏁版嵁鍒嗕韩杈圭晫</h2>
+        <div class="two-col">
+          <div class="box">
+            <h3>绗竴杞彲浠ュ垎浜?/h3>
+            <ul>
+              <li>涓氬姟绫诲瀷銆佸钩鍙板拰闂鏂瑰悜銆?/li>
+              <li>鑴辨晱鍚庣殑浜嬩欢瀛楁鍜屾牱渚嬬粨鏋勩€?/li>
+              <li>甯屾湜璁ㄨ鐨?journey銆佷汉缇ょ被鍨嬪拰涓氬姟鍦烘櫙銆?/li>
+              <li>瀵瑰疄鏂芥垚鏈€佸洟闃熸姇鍏ュ拰鎺ㄨ繘鑺傚鐨勫熀鏈€冭檻銆?/li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>绗竴杞笉鍒嗕韩</h3>
+            <ul>
+              <li>鐪熷疄璐﹀彿 ID銆佸悗鍙伴摼鎺ャ€丄PI/token/cookie銆?/li>
+              <li>瀹㈡埛銆佽鍗曘€丼KU銆佷緵搴斿晢銆佹垚鏈垨鍚堝悓鏁版嵁銆?/li>
+              <li>绮剧‘钀ユ敹銆佸箍鍛婅姳璐广€丷OAS銆佸埄娑︾巼鎴?SKU 绾х粡娴庢暟鎹€?/li>
+              <li>鍖呭惈璐﹀彿銆佹潈闄愩€佸鎴锋垨 URL 鐨勫悗鍙版埅鍥俱€?/li>
+            </ul>
+          </div>
+        </div>
+        <div class="note warning">
+          <p><strong>鍚庣画鍘熷垯锛?/strong>濡傛灉闇€瑕佹妧鏈牱渚嬶紝鎴戜滑鍙互鎻愪緵鑴辨晱瀛楁缁撴瀯鍜屽亣鏁版嵁鏍蜂緥锛涘湪鏄庣‘ NDA銆佺敤閫斻€佷繚瀛樻湡闄愬拰璁块棶鏉冮檺涔嬪墠锛屼笉鍙戦€佸師濮嬩笟鍔″鍑恒€?/p>
+        </div>
+      </section>
+
+      <section>
+        <h2>8. 鎴戜滑瀵瑰悎浣滀环鍊肩殑鍒ゆ柇鏍囧噯</h2>
+        <ul class="checklist">
+          <li>鑳藉惁浠?Shopify 鏈嶈 PDP 琛屼负涓鸿捣鐐癸紝鑰屼笉鏄彧璁插ぇ浼佷笟 CDP銆?/li>
+          <li>鑳藉惁鏀寔灏虹爜銆佺増鍨嬨€佸搧绫诲亸濂姐€侀€€鎹㈣揣鍘熷洜绛夋湇瑁呭叧閿瓧娈点€?/li>
+          <li>鑳藉惁鍜岀幇鏈?EDM/EVM 鍗忎綔锛岄伩鍏嶉噸澶嶈Е杈俱€?/li>
+          <li>鑳藉惁鏍规嵁褰撳墠闃舵鎻愬嚭娓呮櫚銆佸彲鎿嶄綔鐨勬湇鍔¤矾寰勩€?/li>
+          <li>鑳藉惁涓庣幇鏈?PDP 鍜?Shopify 绔欑偣浣撻獙鍏煎锛屽苟璇存槑瀹炴柦涓婄殑娉ㄦ剰浜嬮」銆?/li>
+          <li>鑳藉惁瑙ｉ噴 WhatsApp/SMS/Web Push 绛夋笭閬撳湪涓嶅悓瀹㈡埛闃舵鐨勯€傜敤杈圭晫鍜屾垚鏈€昏緫銆?/li>
+          <li>鑳藉惁璁╂垜浠棤璁哄悗缁悎浣滆妭濂忓浣曪紝閮借兘鍏堢悊瑙ｅ苟娌夋穩鍙鐢ㄧ殑 lifecycle 鍜?segmentation 妗嗘灦銆?/li>
+        </ul>
+        <div class="note danger">
+          <p><strong>鎴戜滑闈炲父娆㈣繋 Insider One 鍒嗕韩澶у搧鐗屾渚嬨€丄I agent 鍜屽叏娓犻亾鎰挎櫙锛涘悓鏃朵篃甯屾湜鑳借繘涓€姝ョ炕璇戞垚閫傚悎涓皬鍨?Shopify 鏈嶈鍝佺墝鐨勯樁娈垫€ц矾寰勶紝鏂逛究鎴戜滑鍒ゆ柇鍚庣画鏄惁瀛樺湪鏇村叿浣撶殑鍚堜綔鍒囧叆鐐广€?/strong></p>
+        </div>
+      </section>
+
+      <section>
+        <h2>9. Reference Links</h2>
+        <ul>
+          <li><a href="https://insiderone.com/" target="_blank" rel="noopener">Insider One platform overview</a></li>
+          <li><a href="https://insiderone.com/industries/retail/" target="_blank" rel="noopener">Retail & Ecommerce page</a></li>
+          <li><a href="https://insiderone.com/customer-data-management/" target="_blank" rel="noopener">Customer Data Management / CDP page</a></li>
+          <li><a href="https://insiderone.com/integrations/" target="_blank" rel="noopener">Integration Hub</a></li>
+          <li><a href="https://insiderone.com/channels/whatsapp/" target="_blank" rel="noopener">WhatsApp marketing page</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      This brief is intentionally sanitized. It is intended for meeting preparation only and does not include raw customer, account, ad, order, SKU, supplier, cost, revenue, or margin data.
+    </footer>
+  </div>
+</body>
+</html>
+
