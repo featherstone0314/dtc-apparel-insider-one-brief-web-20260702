@@ -4,7 +4,7 @@ Public-safe GitHub Pages build for a vendor pre-meeting brief.
 
 Sanitization boundary:
 
-- Real brand name is replaced with `BRAND_REDACTED`.
+- Real brand name is generalized as `DTC Apparel Brand`.
 - No local filesystem paths are included in the published page.
 - No platform identifiers, customer data, order data, SKU-level economics, supplier data, spend, revenue, margin, ROAS, tokens, cookies, or admin URLs are included.
 - The page is intended only to help a vendor prepare a focused presentation/demo.
